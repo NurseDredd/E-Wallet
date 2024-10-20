@@ -1,0 +1,53 @@
+.cardList {
+    position: relative; 
+    min-height:70vh; 
+    max-height:120vh;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+    
+ 
+
+  .inactiveCardsList {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .inactiveCard {
+    position: absolute;
+    transition: transform 0.3s ease, z-index 0.3s ease;
+  }
+  
+  .inactiveCard:hover {
+    transform: translateY(-10px);
+    z-index: 10;
+  }
+  
+
+  .inactiveCardsList .inactiveCard:nth-child(1) {
+    top: 0;
+    z-index: 1;
+  }
+  
+  .inactiveCardsList .inactiveCard:nth-child(2) {
+    top: 33%; 
+    z-index: 2;
+  }
+  
+  .inactiveCardsList .inactiveCard:nth-child(3) {
+    top: 66%;
+    z-index: 3;
+  }
+  
+  .inactiveCardsList .inactiveCard:nth-child(4) {
+    top: 99%;
+    z-index: 4;
+  }
+ 

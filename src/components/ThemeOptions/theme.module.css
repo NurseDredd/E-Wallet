@@ -1,0 +1,15 @@
+
+  .wrapper.dark {
+    background-color: #333;
+    color: white;
+  }
+  
+  .wrapper.light {
+    background-color: white;
+    color: black;
+  }
+
+  .wrapper.blue {
+    background-color: rgb(82, 82, 191);
+    color: white;
+  }

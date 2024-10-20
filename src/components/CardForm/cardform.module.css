@@ -1,0 +1,55 @@
+.cardForm {
+    background-color: #f2f2f2; 
+    border-radius: 10px; 
+    padding: 20px; 
+    max-width: 400px; 
+    margin: auto; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    color: black;
+}
+
+
+.form {
+    width: 100%;
+    display: flex;
+}
+
+label {
+    font-size: 1rem; 
+    font-weight: 500;
+    margin-bottom: 0.5rem; 
+    display: block; 
+}
+
+input, select {
+    max-width: 20rem; 
+    padding: 0.5rem; 
+    margin-bottom: 15px; 
+    border: 1px solid #ccc; 
+    border-radius: 0.5rem;
+    font-size: 1rem; 
+    background-color: white; 
+}
+
+input:focus, select:focus {
+    border-color: #007BFF; 
+    outline: none; 
+}
+
+.dateCvcContainer {
+    display: flex; 
+    margin-bottom: 15px; 
+    justify-content: center;
+}
+
+.expiryDateContainer, .cvcContainer {
+    width: 41%; 
+}
+
+input[type="text"], input[type="number"] {
+    width: 70%;
+}
+
+select {
+    width: 75%;
+}
