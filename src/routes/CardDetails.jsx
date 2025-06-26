@@ -1,11 +1,13 @@
-import React from 'react'
 import EditCard from '../components/EditCard/editCard';
-
+import styles from './cardDetails.module.css';
 
 const CardDetails = () => {
   return (
-    <div><h1>Edit Card</h1>
-      <EditCard/>
+    <div className={styles.cardDetailsContainer}>
+      <h1 className={styles.title}>Edit Card</h1>
+      <div className={styles.content}>
+        <EditCard/>
+      </div>
     </div>
   )
 }

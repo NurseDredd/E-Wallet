@@ -1,12 +1,16 @@
-import React from 'react'
 import ThemeOptions from '../components/ThemeOptions/ThemeOptions'
 import DeleteAllBtn from '../components/DeleteAllBtn/DeleteAllBtn'
+import styles from './settings.module.css'
 
 const Settings = () => {
   return (
-    <div style = {{height:'80vh', display:'flex', flexDirection:'column', gap:'2rem'}}>
-    <ThemeOptions/>
-    <DeleteAllBtn/></div>
+    <div className={styles.settingsContainer}>
+      <h2 className={styles.title}>Settings</h2>
+      <div className={styles.settingsContent}>
+        <ThemeOptions/>
+        <DeleteAllBtn/>
+      </div>
+    </div>
   )
 }
 

@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelector } from "react-redux";
 import styles from "../Card/card.module.css"; 
 import chipImg from "../../assets/chip.png";
@@ -31,26 +30,23 @@ const NewCard = () => {
       case "Swedbank":
         return styles.swedbank;
       default:
-        return 
+        return "";
     }
   };
 
   return (
     <div className={`${styles.Card} ${getCardClass()}`}>
       <div className={styles.topCard}>
-      <img src={chipImg} alt="chip" />
+        <img src={chipImg} alt="chip" />
         <h2>{cardDetails.vendor || "Vendor"}</h2>
       </div>
       <div className={styles.middleCard}>
         <p>{formatCardNumber(cardDetails.cardNumber) || "#### #### #### ####"}</p>
-      </div>
-      <div className={styles.bottomCard}>
-      <p className="cardHolder" style={{fontSize:'0.8rem'}}>Card Holder:</p>
+        <p className={styles.cardHolder}>Card Holder:</p>
       </div>
       <div className={styles.bottomCard}>
         <p>{cardDetails.cardHolderName}</p>
-        <p>CVC: {cardDetails.cardCVC}</p>
-        <p>Exp: {formattedExpiryDate()} </p>
+        <p>Exp: {formattedExpiryDate()}</p>
       </div>
     </div>
   );

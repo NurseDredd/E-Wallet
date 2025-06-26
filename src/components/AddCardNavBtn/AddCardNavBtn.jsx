@@ -1,10 +1,12 @@
-import React from 'react';
 import { Link } from "react-router-dom";
+import styles from './AddCardNavBtn.module.css';
 
 const AddCardNavBtn = () => {
   return (
-    <div style = {{height:'6rem'}}>
-      <button style = {{marginTop:'2rem'}}><Link to="/addcard" className="addRouteBtn">Add new card</Link></button>
+    <div className={styles.container}>
+      <Link to="/addcard" className={styles.button}>
+        Add new card
+      </Link>
     </div>
   );
 }

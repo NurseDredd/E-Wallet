@@ -1,7 +1,7 @@
-import React from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { deleteCard } from '../../Redux/CardSlice';
 import { useNavigate } from 'react-router-dom';
+import styles from './DeleteAllBtn.module.css';
 
 const DeleteAllBtn = () => {
   const dispatch = useDispatch();
@@ -13,15 +13,22 @@ const DeleteAllBtn = () => {
   const handleDeleteInactiveCards = () => {
     inactiveCards.forEach(card => {
       dispatch(deleteCard(card.cardNumber)); 
-
-      navigate('/');
     });
+    navigate('/');
   };
 
   return (
-    <div>
-      <button onClick={handleDeleteInactiveCards}>
-        Delete All Inactive Cards
+    <div className={styles.container}>
+      <h2 className={styles.title}>Delete All Inactive Cards</h2>
+      <p className={styles.warning}>
+        This action will permanently delete all inactive cards. This cannot be undone.
+      </p>
+      <button 
+        onClick={handleDeleteInactiveCards}
+        className={styles.deleteButton}
+        disabled={inactiveCards.length === 0}
+      >
+        Delete All Inactive Cards ({inactiveCards.length})
       </button>
     </div>
   );

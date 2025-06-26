@@ -1,13 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './cardform.module.css';
 import AddBtn from '../AddBtn/AddBtn';
 import { setCardDetails, addCard, resetCardDetails, updateCard } from '../../Redux/CardSlice'; 
 import { useDispatch, useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 
 const CardForm = ({ formValues, isEditing }) => {
     const dispatch = useDispatch();
 
     const cards = useSelector((state) => state.card.cards);
+
+    CardForm.propTypes = {
+        formValues: PropTypes.shape({
+            cardNumber: PropTypes.string,
+            cardHolderName: PropTypes.string,
+            cardCVC: PropTypes.string,
+            vendor: PropTypes.string,
+            expiryMonth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+            expiryYear: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+        }),
+        isEditing: PropTypes.bool
+    };
 
     // Lokalt tillstånd för formulärvärdena
     const [localFormValues, setLocalFormValues] = useState({

@@ -1,55 +1,172 @@
 .cardForm {
-    background-color: #f2f2f2; 
-    border-radius: 10px; 
-    padding: 20px; 
-    max-width: 400px; 
-    margin: auto; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    color: black;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 500px;
+    margin: 2rem auto;
+    box-shadow: 0 8px 25px var(--shadow-color);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
 }
 
+.cardForm:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px var(--shadow-color);
+}
 
 .form {
     width: 100%;
     display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 label {
-    font-size: 1rem; 
-    font-weight: 500;
-    margin-bottom: 0.5rem; 
-    display: block; 
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: block;
+    margin-bottom: 0.25rem;
 }
 
 input, select {
-    max-width: 20rem; 
-    padding: 0.5rem; 
-    margin-bottom: 15px; 
-    border: 1px solid #ccc; 
-    border-radius: 0.5rem;
-    font-size: 1rem; 
-    background-color: white; 
+    width: 100%;
+    padding: 0.875rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    font-family: inherit;
 }
 
 input:focus, select:focus {
-    border-color: #007BFF; 
-    outline: none; 
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.1);
+    transform: translateY(-1px);
 }
 
 .dateCvcContainer {
-    display: flex; 
-    margin-bottom: 15px; 
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 .expiryDateContainer, .cvcContainer {
-    width: 41%; 
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
-input[type="text"], input[type="number"] {
-    width: 70%;
+.expiryDateContainer {
+    grid-column: 1;
 }
 
-select {
-    width: 75%;
+.cvcContainer {
+    grid-column: 2;
+}
+
+.submitButton {
+    background: linear-gradient(135deg, var(--accent-color), var(--bg-secondary));
+    color: var(--text-primary);
+    border: none;
+    border-radius: 12px;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.submitButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.submitButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+.submitButton:hover::before {
+    left: 100%;
+}
+
+.submitButton:active {
+    transform: translateY(-1px);
+}
+
+.submitButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.submitButton:disabled:hover {
+    transform: none;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .cardForm {
+        margin: 1rem auto;
+        padding: 1.5rem;
+        max-width: 90%;
+    }
+    
+    .dateCvcContainer {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .expiryDateContainer, .cvcContainer {
+        grid-column: 1;
+    }
+    
+    .submitButton {
+        padding: 0.875rem 1.75rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cardForm {
+        padding: 1rem;
+        margin: 0.5rem auto;
+    }
+    
+    .form {
+        gap: 1rem;
+    }
+    
+    input, select {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .submitButton {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
 }

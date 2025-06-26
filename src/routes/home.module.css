@@ -1,0 +1,25 @@
+.homeContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  min-height: 80vh;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .homeContainer {
+    padding: 1rem 0.5rem;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .homeContainer {
+    padding: 0.5rem;
+    gap: 1rem;
+  }
+} 

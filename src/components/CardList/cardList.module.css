@@ -1,53 +1,126 @@
 .cardList {
-    position: relative; 
-    min-height:70vh; 
-    max-height:120vh;
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-    
- 
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
 
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section h2 {
+  color: var(--text-primary);
+  font-size: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-color), var(--bg-secondary));
+  border-radius: 2px;
+}
+
+.activeCardSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.inactiveCardsSection {
+  width: 100%;
+}
+
+.inactiveCardsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: start;
+}
+
+.inactiveCard {
+  width: 100%;
+  max-width: 400px;
+  transition: all 0.3s ease;
+}
+
+.inactiveCard:hover {
+  transform: translateY(-8px) scale(1.02);
+  z-index: 10;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .cardList {
+    padding: 1rem 0.5rem;
+    gap: 2rem;
+  }
+  
+  .section h2 {
+    font-size: 1.5rem;
+  }
+  
   .inactiveCardsList {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
   .inactiveCard {
-    position: absolute;
-    transition: transform 0.3s ease, z-index 0.3s ease;
+    max-width: 100%;
   }
-  
-  .inactiveCard:hover {
-    transform: translateY(-10px);
-    z-index: 10;
-  }
-  
+}
 
-  .inactiveCardsList .inactiveCard:nth-child(1) {
-    top: 0;
-    z-index: 1;
+@media (max-width: 480px) {
+  .cardList {
+    padding: 0.5rem;
+    gap: 1.5rem;
   }
   
-  .inactiveCardsList .inactiveCard:nth-child(2) {
-    top: 33%; 
-    z-index: 2;
+  .section h2 {
+    font-size: 1.25rem;
   }
   
-  .inactiveCardsList .inactiveCard:nth-child(3) {
-    top: 66%;
-    z-index: 3;
+  .inactiveCardsList {
+    gap: 1rem;
   }
-  
-  .inactiveCardsList .inactiveCard:nth-child(4) {
-    top: 99%;
-    z-index: 4;
+}
+
+/* Animation for cards appearing */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.inactiveCard {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.inactiveCard:nth-child(1) { animation-delay: 0.1s; }
+.inactiveCard:nth-child(2) { animation-delay: 0.2s; }
+.inactiveCard:nth-child(3) { animation-delay: 0.3s; }
+.inactiveCard:nth-child(4) { animation-delay: 0.4s; }
+.inactiveCard:nth-child(5) { animation-delay: 0.5s; }
  

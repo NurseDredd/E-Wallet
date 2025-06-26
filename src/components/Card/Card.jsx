@@ -1,5 +1,5 @@
-import React from "react";
 import { useNavigate } from "react-router-dom"; 
+import PropTypes from "prop-types";
 import styles from "./card.module.css";
 import chipImg from "../../assets/chip.png";
 
@@ -48,14 +48,26 @@ const Card = ({cardDetails, className}) => {
       </div>
       <div className={styles.middleCard}>
         <p>{formatCardNumber(cardDetails.cardNumber) || "#### #### #### ####"}</p>
-        <p className="cardHolder" style={{fontSize:'0.8rem'}}>Card Holder:</p>
+        <p className={styles.cardHolder}>Card Holder:</p>
       </div>
       <div className={styles.bottomCard}>
         <p>{cardDetails.cardHolderName}</p>
-        <p>Exp: {formattedExpiryDate()} </p>
+        <p>Valid Thru: {formattedExpiryDate()} </p>
       </div>
     </div>
   );
+};
+
+Card.propTypes = {
+  cardDetails: PropTypes.shape({
+    cardNumber: PropTypes.string,
+    vendor: PropTypes.string,
+    expiryMonth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    expiryYear: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    cardHolderName: PropTypes.string,
+    isActive: PropTypes.bool
+  }).isRequired,
+  className: PropTypes.string
 };
 
 export default Card;

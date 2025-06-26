@@ -1,13 +1,13 @@
-import React from 'react'
 import AddCardNavBtn from '../components/AddCardNavBtn/AddCardNavBtn'
 import CardList from '../components/CardList/CardList';
+import styles from './home.module.css';
 
 const Home = () => {
   return (
-    <>
-    <CardList/>
-    <AddCardNavBtn/>
-    </>
+    <div className={styles.homeContainer}>
+      <CardList/>
+      <AddCardNavBtn/>
+    </div>
   )
 }
 

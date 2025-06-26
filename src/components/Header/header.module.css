@@ -1,40 +1,143 @@
 .header {
     width: 100%;
-    background-color: #333;
-    color: white;
+    background-color: var(--header-bg);
+    color: var(--text-primary);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 1rem;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: all 0.3s ease;
 }
 
-h2 {
+.header > a {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-decoration: none;
+}
+
+.header h1 {
     font-family: "Bebas Neue", sans-serif;
     margin: 0;
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     font-weight: 400;
     font-style: normal;
-    padding: 1rem;
+    padding: 1rem 0;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+.header h2:hover {
+    color: var(--accent-color);
 }
 
 nav {
-    padding: 1rem ;
+    padding: 1rem 0;
+    margin-left: auto;
 }
 
 .header nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
 }
 
 .header nav ul li {
     display: inline;
-    margin: 0 15px;
 }
 
 .header nav ul li a {
-    color: white;
+    color: var(--text-primary);
     text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 .header nav ul li a:hover {
-    text-decoration: underline;
+    background-color: var(--accent-color);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .header {
+        padding: 0 0.5rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        position: relative;
+    }
+    
+    .header > a {
+        position: static;
+        transform: none;
+    }
+    
+    .header h2 {
+        font-size: 1.5rem;
+        padding: 0.5rem 0;
+    }
+    
+    nav {
+        margin-left: 0;
+        position: absolute;
+        top: 50%;
+        right: 0.5rem;
+        transform: translateY(-50%);
+    }
+    
+    .header nav ul {
+        gap: 0.5rem;
+    }
+    
+    .header nav ul li a {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .settingsText {
+        display: none;
+    }
+    .settingsIcon {
+        display: inline-flex;
+        align-items: center;
+    }
+}
+
+.settingsLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.settingsText {
+  display: inline;
+}
+
+.settingsIcon {
+  display: none;
+}
+
+
+.settingsIcon .material-symbols-outlined {
+  font-size: 24px;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+@media (max-width: 768px) {
+  .settingsText {
+    display: none;
+  }
+  .settingsIcon {
+    display: inline-flex;
+    align-items: center;
+  }
 }
