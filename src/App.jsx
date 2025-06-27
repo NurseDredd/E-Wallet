@@ -1,6 +1,6 @@
 import './App.css'
 import { useSelector } from 'react-redux';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import {HashRouter as Router, Routes, Route} from 'react-router-dom';
 import Home from "./routes/Home";
 import AddCard from './routes/AddCard';
 import Settings from './routes/Settings';
