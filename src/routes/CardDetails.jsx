@@ -1,4 +1,4 @@
-import EditCard from '../components/EditCard/editCard';
+import EditCard from '../components/EditCard/EditCard';
 import styles from './cardDetails.module.css';
 
 const CardDetails = () => {
