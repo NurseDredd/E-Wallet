@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import cardSlice from './CardSlice';
+import cardSlice from './cardSlice';
 import themeSlice from "./themeSlice";
 
 let store = configureStore({

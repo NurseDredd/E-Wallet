@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './cardform.module.css';
 import AddBtn from '../AddBtn/AddBtn';
-import { setCardDetails, addCard, resetCardDetails, updateCard } from '../../Redux/CardSlice'; 
+import { setCardDetails, addCard, resetCardDetails, updateCard } from '../../Redux/cardSlice'; 
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 

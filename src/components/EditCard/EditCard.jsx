@@ -1,7 +1,7 @@
-import React from 'react';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
-import { activateCard, deleteCard, deactivateCard} from '../../Redux/CardSlice';
+import { activateCard, deleteCard, deactivateCard} from '../../Redux/cardSlice';
 import CardForm from "../CardForm/CardForm";
 import Card from "../Card/Card";
 

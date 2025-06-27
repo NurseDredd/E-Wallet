@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { deleteCard } from '../../Redux/CardSlice';
+import { deleteCard } from '../../Redux/cardSlice';
 import { useNavigate } from 'react-router-dom';
 import styles from './DeleteAllBtn.module.css';
 
