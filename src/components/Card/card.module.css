@@ -238,7 +238,7 @@ p {
 
 @media (max-width: 480px) {
   .Card {
-    height: 11rem;
+    height: 12rem;
     width: 18rem;
     padding: 1rem;
     gap: 1rem;
